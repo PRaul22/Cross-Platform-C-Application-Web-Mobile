@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect_Nonu_Stefania_Popa_Raul_.NETMAUI.InchiriereEntryPage"
+             Title="Detalii Inchiriere">
+
+    <VerticalStackLayout Spacing="20" Padding="20">
+
+        <Label Text="Nume Client:" FontSize="Medium"/>
+        <Entry x:Name="NumeClientEntry" 
+               Placeholder="Introdu numele clientului"
+               Text="{Binding NumeClient}" />
+
+        <Label Text="Data Preluarii:" FontSize="Medium" FontAttributes="Bold"/>
+        <DatePicker Date="{Binding DataPreluare}" />
+        
+        <Label Text="Data Returnarii:" FontSize="Medium"/>
+        <DatePicker x:Name="DataReturnarePicker"
+                    Date="{Binding DataReturnare}" />
+
+        <Button Text="Salveaza Rezervarea"
+                Clicked="OnSaveClicked"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"/>
+
+        <Button Text="Sterge Rezervarea"
+                Clicked="OnDeleteClicked"
+                BackgroundColor="Red"
+                TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>

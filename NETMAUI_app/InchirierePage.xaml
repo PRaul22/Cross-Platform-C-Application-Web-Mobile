@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect_Nonu_Stefania_Popa_Raul_.NETMAUI.InchirierePage"
+             Title="Istoric Inchirieri">
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="10" RowSpacing="10">
+
+        <Label x:Name="TitluMasinaLabel" 
+               FontSize="Large" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center"/>
+
+        <CollectionView x:Name="listView" 
+                        Grid.Row="1"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" Padding="10" BorderColor="LightGray">
+
+                        <Grid ColumnDefinitions="*, Auto">
+
+                            <StackLayout Grid.Column="0" VerticalOptions="Center">
+                                <Label Text="{Binding NumeClient, StringFormat='Client: {0}'}" 
+                                       FontAttributes="Bold" FontSize="16"/>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Perioada: " FontSize="12" TextColor="Gray"/>
+                                    <Label Text="{Binding DataPreluare, StringFormat='{0:dd/MM/yyyy}-'}" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="{Binding DataReturnare, StringFormat='{0:dd/MM/yyyy}'}" FontSize="12" TextColor="Gray"/>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <Button Grid.Column="1"
+                                    Text="Editeaza"
+                                    FontSize="12"
+                                    HeightRequest="40"
+                                    WidthRequest="80"
+                                    BackgroundColor="{StaticResource Primary}"
+                                    TextColor="White"
+                                    Clicked="OnEditClicked"
+                                    CommandParameter="{Binding .}" 
+                                    VerticalOptions="Center"/>
+                        </Grid>
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="2"
+                Text="+ Adauga Rezervare Noua"
+                Clicked="OnAddClicked"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect_Nonu_Stefania_Popa_Raul_.NETMAUI.MasinaEntryPage"
+             Title="Detalii Masina">
+    <VerticalStackLayout Spacing="10" Margin="20">
+        <Entry x:Name="MarcaEntry" Placeholder="Marca (ex: Audi)" />
+        <Entry x:Name="ModelEntry" Placeholder="Model (ex: A4)" />
+        <Entry x:Name="PretEntry" Placeholder="Pret pe zi" Keyboard="Numeric" />
+
+        <Button Text="Salveaza" Clicked="OnSaveButtonClicked" />
+        <Button Text="Sterge" Clicked="OnDeleteButtonClicked" BackgroundColor="Red"/>
+    </VerticalStackLayout>
+</ContentPage>
